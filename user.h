@@ -93,21 +93,9 @@ class UserList {
 private:
     static QList<User*> users;
 public:
-    static void add_user(User* user) {
-        users.push_back(user);
-    }
-    static User* find_user(const QStringView name) {
-        for (User* u : users) {
-            if (u->name == name || u->username == name) {
-                return u;
-            }
-        }
-        return nullptr;
-    }
-
-    static void cleanup() {
-        qDeleteAll(users);
-    }
+    static void add_user(User* user);
+    static User* find_user(const QStringView name);
+    static void cleanup();
 };
 
 #endif // USER_H

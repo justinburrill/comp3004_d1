@@ -17,3 +17,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::on_enter_button_clicked() {
+    // TODO;
+}
