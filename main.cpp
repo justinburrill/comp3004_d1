@@ -6,6 +6,8 @@
 // set defaults
 int StaffUser::current_staff_id = 0;
 int CustomerUser::current_loyalty_points_id = 0;
+QList<User*> UserList:: users = QList<User*>();
+
 
 void setupUsers() {
     UserList::add_user(new CustomerUser("Jane Doe", "JDeey", "janedoe@fakemail.com", "123 Sesame St"));
