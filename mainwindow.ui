@@ -47,6 +47,19 @@
        </rect>
       </property>
      </widget>
+     <widget class="QPushButton" name="enter_button">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>230</y>
+        <width>81</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Enter</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="customer_dashboard"/>
     <widget class="QWidget" name="kitchen_staff_dashboard"/>
