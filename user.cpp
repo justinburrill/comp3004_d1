@@ -1,10 +1,10 @@
 #include "user.h"
 
-void UserList::add_user(User* user) {
+void UserDatabase::add_user(User* user) {
     users.push_back(user);
 }
 
-User* UserList::find_user(const QStringView name) {
+User* UserDatabase::find_user(const QStringView name) {
     for (User* u : users) {
         if (u->name == name || u->username == name) {
             return u;
@@ -13,6 +13,6 @@ User* UserList::find_user(const QStringView name) {
     return nullptr;
 }
 
-void UserList::cleanup() {
+void UserDatabase::cleanup() {
     qDeleteAll(users);
 }

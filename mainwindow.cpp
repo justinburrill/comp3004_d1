@@ -21,7 +21,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_enter_button_clicked() {
     QString entered_name = ui->username_entry->text().trimmed();
-    User* found_user = UserList::find_user(entered_name);
+    User* found_user = UserDatabase::find_user(entered_name);
     if (found_user == nullptr) { // user not found
         QString errmsg = QString("User \"%1\" not found").arg(entered_name);
         QMessageBox::information(this, "Login Error", errmsg);

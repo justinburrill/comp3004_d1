@@ -89,7 +89,8 @@ public:
     }
 };
 
-class UserList {
+// in-memory database
+class UserDatabase {
 private:
     static QList<User*> users;
 public:
