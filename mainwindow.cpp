@@ -10,7 +10,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->stackedWidget->setCurrentIndex(0); // set login page
+    ui->stackedWidget->setCurrentIndex(0); // start on login page
+    ui->exit_button->hide(); // don't need the exit button on the login page
 }
 
 MainWindow::~MainWindow()
@@ -32,23 +33,31 @@ void MainWindow::on_enter_button_clicked() {
     }
 }
 
+
+void MainWindow::on_exit_button_clicked() {
+    ui->stackedWidget->setCurrentIndex(0);
+    ui->username_entry->clear();
+    ui->exit_button->hide();
+}
+
 void MainWindow::switch_to_dashboard(UserType type) {
-        switch (type) {
-            case UserType::Cashier:
-                ui->stackedWidget->setCurrentIndex(1);
-                break;
-            case UserType::Customer:
-                ui->stackedWidget->setCurrentIndex(2);
-                break;
-            case UserType::KitchenStaff:
-                ui->stackedWidget->setCurrentIndex(3);
-                break;
-            case UserType::Manager:
-                ui->stackedWidget->setCurrentIndex(4);
-                break;
-            case UserType::SysAdmin:
-                ui->stackedWidget->setCurrentIndex(5);
-                break;
-        }
+    ui->exit_button->show();
+    switch (type) {
+        case UserType::Cashier:
+            ui->stackedWidget->setCurrentIndex(1);
+            break;
+        case UserType::Customer:
+            ui->stackedWidget->setCurrentIndex(2);
+            break;
+        case UserType::KitchenStaff:
+            ui->stackedWidget->setCurrentIndex(3);
+            break;
+        case UserType::Manager:
+            ui->stackedWidget->setCurrentIndex(4);
+            break;
+        case UserType::SysAdmin:
+            ui->stackedWidget->setCurrentIndex(5);
+            break;
+    }
 
 }
