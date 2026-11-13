@@ -23,7 +23,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    User* current_user;
+    User* current_user = nullptr;
     void switch_to_dashboard(UserType type);
+    void reset();
 };
 #endif // MAINWINDOW_H

@@ -33,11 +33,15 @@ void MainWindow::on_enter_button_clicked() {
     }
 }
 
-
-void MainWindow::on_exit_button_clicked() {
+void MainWindow::reset() {
     ui->stackedWidget->setCurrentIndex(0);
     ui->username_entry->clear();
     ui->exit_button->hide();
+    current_user = nullptr;
+}
+
+void MainWindow::on_exit_button_clicked() {
+    MainWindow::reset();
 }
 
 void MainWindow::switch_to_dashboard(UserType type) {
