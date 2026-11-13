@@ -61,11 +61,53 @@
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="cashier_dashboard"/>
+    <widget class="QWidget" name="cashier_dashboard">
+     <widget class="QLabel" name="cashier_info_label">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>200</y>
+        <width>251</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>cashier_info_label</string>
+      </property>
+     </widget>
+    </widget>
     <widget class="QWidget" name="customer_dashboard"/>
     <widget class="QWidget" name="kitchen_staff_dashboard"/>
-    <widget class="QWidget" name="manager_dashboard"/>
-    <widget class="QWidget" name="sysadmin_dashboard"/>
+    <widget class="QWidget" name="manager_dashboard">
+     <widget class="QLabel" name="manager_info_label">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>120</y>
+        <width>131</width>
+        <height>221</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>manager_info_label</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="sysadmin_dashboard">
+     <widget class="QLabel" name="sysadmin_info_label">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>200</y>
+        <width>131</width>
+        <height>151</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>sysadmin_info_label</string>
+      </property>
+     </widget>
+    </widget>
    </widget>
    <widget class="QPushButton" name="exit_button">
     <property name="geometry">
