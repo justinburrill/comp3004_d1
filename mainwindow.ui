@@ -65,8 +65,8 @@
      <widget class="QLabel" name="cashier_info_label">
       <property name="geometry">
        <rect>
-        <x>330</x>
-        <y>200</y>
+        <x>320</x>
+        <y>160</y>
         <width>251</width>
         <height>141</height>
        </rect>
@@ -98,7 +98,7 @@
       <property name="geometry">
        <rect>
         <x>320</x>
-        <y>200</y>
+        <y>150</y>
         <width>131</width>
         <height>151</height>
        </rect>

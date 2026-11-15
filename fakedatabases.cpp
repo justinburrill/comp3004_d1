@@ -23,7 +23,22 @@ void setupFakeUserDatabase() {
 
 // starting ingredients in inventory
 void setupFakeIngredientDatabase() {
-    // TODO
+    IngredientDatabaseInterface::add_count("Bacon", 80);
+    IngredientDatabaseInterface::add_count("Lettuce", 100);
+    IngredientDatabaseInterface::add_count("Tomato", 100);
+    IngredientDatabaseInterface::add_count("Bread", 45);
+    IngredientDatabaseInterface::add_count("Chicken", 60);
+    IngredientDatabaseInterface::add_count("Steak", 35);
+    IngredientDatabaseInterface::add_count("Pork", 29);
+    IngredientDatabaseInterface::add_count("Lemon", 25);
+    IngredientDatabaseInterface::add_count("Mayo", 60);
+    IngredientDatabaseInterface::add_count("Tea Leaves", 80);
+    IngredientDatabaseInterface::add_count("Tomato Sauce", 40);
+    IngredientDatabaseInterface::add_count("Cream Cheese", 92);
+    IngredientDatabaseInterface::add_count("Cheese", 57);
+    IngredientDatabaseInterface::add_count("Coffee", 180);
+    IngredientDatabaseInterface::add_count("Sugar", 180);
+    IngredientDatabaseInterface::add_count("Salt", 180);
 }
 
 void setupFakeMenuItemDatabase() {
@@ -38,6 +53,7 @@ void cleanupFakeDatabases() {
 
 void setupFakeDatabases() {
     setupFakeUserDatabase();
+    setupFakeIngredientDatabase();
 }
 
 void UserDatabase::cleanup() {
