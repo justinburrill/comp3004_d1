@@ -21,6 +21,8 @@ HEADERS += \
     ingredients.h \
     mainwindow.h \
     menuitem.h \
+    order.h \
+    orderqueue.h \
     user.h
 
 FORMS += \
