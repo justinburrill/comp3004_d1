@@ -89,14 +89,9 @@ public:
     }
 };
 
-// in-memory database
-class UserDatabase {
-private:
-    static QList<User*> users;
+class UserDatabaseInterface {
 public:
-    static void add_user(User* user);
     static User* find_user(const QStringView name);
-    static void cleanup();
 };
 
 #endif // USER_H

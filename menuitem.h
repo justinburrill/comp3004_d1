@@ -19,13 +19,9 @@ public:
 };
 
 
-class MenuDatabase {
-private:
-    static QList<MenuItem*> menu_items;
-
+class MenuDatabaseInterface {
 public:
-
-    static void cleanup();
+    static void getMenuItems();
 };
 
 #endif // MENUITEM_H

@@ -3,11 +3,8 @@
 
 #include <qstring.h>
 
-class IngredientDatabase {
-private:
-    static QMap<QString, uint> ingredients;
+class IngredientDatabaseInterface {
 public:
-
     // get amount of ingredient in the database
     static uint get_count(QString ingredient_name);
     // add to the amount of ingredient in the database
@@ -19,11 +16,9 @@ public:
     // ... or list of ingredients
     static void subtract_count(QMap<QString, uint> ingredients);
     // check if we have enough of an ingredient
-    bool have_enough(QString ingredient_name, uint count);
+    static bool have_enough(QString ingredient_name, uint count);
     // ... or list of ingredients
-    bool have_enough(QMap<QString, uint> ingredients);
-
-    static void cleanup();
+    static bool have_enough(QMap<QString, uint> ingredients);
 };
 
 #endif // INGREDIENTS_H

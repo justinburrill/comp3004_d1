@@ -1,11 +1,8 @@
 #include "user.h"
+#include "fakedatabases.h"
 
-void UserDatabase::add_user(User* user) {
-    users.push_back(user);
-}
-
-User* UserDatabase::find_user(const QStringView name) {
-    for (User* u : users) {
+User* UserDatabaseInterface::find_user(const QStringView name) {
+    for (User* u : UserDatabase::users) {
         if (u->name == name || u->username == name) {
             return u;
         }
@@ -13,6 +10,4 @@ User* UserDatabase::find_user(const QStringView name) {
     return nullptr;
 }
 
-void UserDatabase::cleanup() {
-    qDeleteAll(users);
-}
+
