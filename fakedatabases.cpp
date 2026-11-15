@@ -56,16 +56,16 @@ void setupFakeDatabases() {
     setupFakeIngredientDatabase();
 }
 
-void UserDatabase::cleanup() {
-    qDeleteAll(users);
-}
-
 void UserDatabase::add_user(User *user) {
     users.push_back(user);
 }
 
+void UserDatabase::cleanup() {
+    qDeleteAll(users);
+}
+
 void IngredientDatabase::cleanup() {
-    // nothing to do
+    // nothing to do, no dynamically allocated contents
 }
 
 void MenuDatabase::cleanup() {

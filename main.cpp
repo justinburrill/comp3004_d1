@@ -3,12 +3,14 @@
 #include "ingredients.h"
 #include "menuitem.h"
 #include "fakedatabases.h"
+#include "order.h"
 
 #include <QApplication>
 
 // set defaults
-int StaffUser::current_staff_id = 0;
-int CustomerUser::current_loyalty_points_id = 0;
+uint StaffUser::current_staff_id = 0;
+uint CustomerUser::current_loyalty_points_id = 0;
+uint Order::current_order_id = 0;
 
 // setup in-memory databases
 QList<User*> UserDatabase::users = QList<User*>();

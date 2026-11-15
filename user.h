@@ -20,16 +20,17 @@ public:
 };
 
 class CustomerUser : public User {
+private:
+    static uint current_loyalty_points_id; // auto-increment
 public:
-    static int current_loyalty_points_id; // auto-increment
 
     QString email;
     QString home_address;
-    int loyalty_points_id;
-    int loyalty_points_balance;
-    int credit_balance;
+    uint loyalty_points_id;
+    uint loyalty_points_balance;
+    float credit_balance;
 
-    CustomerUser(QString name, QString username, QString email, QString home_address, int loyalty_points_balance = 0, int credit_balance = 0)
+    CustomerUser(QString name, QString username, QString email, QString home_address, uint loyalty_points_balance = 0, float credit_balance = 0.0f)
         : User(name, username), email(email), home_address(home_address), loyalty_points_id(current_loyalty_points_id), loyalty_points_balance(loyalty_points_balance), credit_balance(credit_balance)  {
         // increment for next customer
         current_loyalty_points_id++;
@@ -41,10 +42,10 @@ public:
 };
 
 class StaffUser : public User {
+private:
+    static uint current_staff_id; // auto-increment
 public:
-    static int current_staff_id; // auto-increment
-
-    int staff_id;
+    uint staff_id;
 
     StaffUser(QString name, QString username) : User(name, username), staff_id(current_staff_id) {
         // increment for next staff member
@@ -92,6 +93,8 @@ public:
 class UserDatabaseInterface {
 public:
     static User* find_user(const QStringView name);
+    static User* find_user(const uint loyalty_points_id);
+    static QList<User*>* get_users();
 };
 
 #endif // USER_H

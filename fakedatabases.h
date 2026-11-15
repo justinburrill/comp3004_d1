@@ -10,8 +10,8 @@ void cleanupFakeDatabases();
 
 class UserDatabase {
 public:
-    static void add_user(User* user);
     static QList<User*> users;
+    static void add_user(User* user);
     static void cleanup();
 };
 
