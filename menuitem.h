@@ -3,6 +3,7 @@
 
 #include <qstring.h>
 #include <qmap.h>
+#include <QList>
 
 enum class MenuCategory {Sandwich, HotBeverage, ColdBeverage};
 
@@ -21,7 +22,11 @@ public:
 
 class MenuDatabaseInterface {
 public:
-    static void getMenuItems();
+    static void add_menu_item(QString name, MenuCategory category, float price, QMap<QString, uint> ingredients);
+
+    static QList<MenuItem*> get_menu_items();
+    static MenuItem* find_menu_item(const QStringView name);
+    static void cleanup();
 };
 
 #endif // MENUITEM_H
