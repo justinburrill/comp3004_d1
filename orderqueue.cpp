@@ -10,6 +10,7 @@ Order* OrderQueue::pop_first_order() {
         return nullptr;
     }
     Order* ret = order_queue.takeFirst();
+    ret->status = OrderStatus::Completed;
     order_history.push_back(ret);
     return ret;
 }

@@ -49,7 +49,6 @@ void MainWindow::on_submit_order_button_clicked() {
     }
     CustomerUser* customer = static_cast<CustomerUser*>(current_user);
     Order* order = new Order(customer, items_in_cart, OrderType::InPerson);
-    customer->loyalty_points_balance += order->loyalty_points_earned_from_order();
     items_in_cart.clear();
     OrderQueue::new_order(order);
     switch_to_customer_dashboard();
@@ -69,6 +68,7 @@ void MainWindow::on_exit_button_clicked() {
 
 void MainWindow::on_complete_order_button_clicked(){
     Order* finished_order = OrderQueue::pop_first_order();
+    finished_order->customer->loyalty_points_balance += finished_order->loyalty_points_earned_from_order();
     if (finished_order != nullptr) {
         generate_kitchen_dashboard();
     }

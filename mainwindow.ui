@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>6</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="login_page">
      <widget class="QLabel" name="username_entry_label">
@@ -181,14 +181,14 @@
      <widget class="QPushButton" name="complete_order_button">
       <property name="geometry">
        <rect>
-        <x>652</x>
+        <x>642</x>
         <y>530</y>
-        <width>141</width>
+        <width>151</width>
         <height>25</height>
        </rect>
       </property>
       <property name="text">
-       <string>Clear Last Order</string>
+       <string>Complete First Order</string>
       </property>
      </widget>
     </widget>

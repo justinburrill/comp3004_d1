@@ -62,7 +62,6 @@ uint Order::loyalty_points_earned_from_order() {
         return 0; // as per business rules
     }
     uint points_earned = total_cost() / 3;
-    qDebug("Earned %d points", points_earned);
     return points_earned;
 }
 
