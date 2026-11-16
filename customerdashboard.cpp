@@ -63,9 +63,7 @@ void MainWindow::generate_cart() {
         return;
     }
     for (MenuItem *item_in_cart : items_in_cart) {
-        QString txt = item_in_cart->generate_menu_text();
-        QLabel* label = new QLabel(txt);
-        ui->cart_layout->addWidget(label);
+        ui->cart_layout->addWidget(new QLabel(item_in_cart->generate_menu_text()));
         QPushButton* button = new QPushButton();
         button->setText("Remove");
         connect(button, &QPushButton::clicked, this, [this, item_in_cart] {

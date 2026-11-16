@@ -93,9 +93,9 @@ void setupFakeMenuItemDatabase() {
         {"Coffee Beans", 2},
         {"Ice", 5}
     });
-    MenuDatabaseInterface::add_menu_item("Large Iced Cofee", MenuCategory::ColdBeverage, 7.49f, {
+    MenuDatabaseInterface::add_menu_item("Large Iced Coffee", MenuCategory::ColdBeverage, 7.49f, {
         {"Sugar", 3},
-        {"Coffe Beans", 4},
+        {"Coffee Beans", 4},
         {"Ice", 8}
     });}
 
