@@ -44,9 +44,7 @@ void MainWindow::on_exit_button_clicked() {
     MainWindow::reset();
 }
 
-void MainWindow::switch_to_dashboard(UserType type) {
-    ui->exit_button->show();
-
+QString usertype_to_str(UserType type) {
     static const QString roleNames[] = {
         "Cashier",
         "Kitchen Staff",
@@ -55,11 +53,16 @@ void MainWindow::switch_to_dashboard(UserType type) {
         "Customer"
     };
 
-    QString roleStr = roleNames[static_cast<int>(current_user->get_type())];
+    return roleNames[static_cast<int>(type)];
+}
+
+void MainWindow::switch_to_dashboard(UserType type) {
+    ui->exit_button->show();
+
 
     QString displayInfo = QString("Name: %1\nRole: %2")
             .arg(current_user->name)
-            .arg(roleStr);
+            .arg(usertype_to_str(current_user->get_type()));
 
     switch (type) {
         case UserType::Cashier:
