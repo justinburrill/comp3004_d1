@@ -43,6 +43,14 @@ QList<Order*> OrderQueue::get_order_history_for_customer(CustomerUser* customer)
     return out;
 }
 
+void OrderQueue::cancel_order(Order* target_order) {
+    int index = order_queue.indexOf(target_order);
+    if (index != -1){
+        Order* order = order_queue.takeAt(index);
+        order_history.append(order);
+     }
+}
+
 void OrderQueue::cleanup() {
     qDeleteAll(order_queue);
     qDeleteAll(order_history);

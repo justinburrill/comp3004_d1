@@ -39,6 +39,7 @@ void MainWindow::on_enter_button_clicked() {
 }
 
 void MainWindow::on_back_button_clicked() {
+<<<<<<< Updated upstream
     switch_to_customer_dashboard();
 }
 
@@ -51,6 +52,9 @@ void MainWindow::on_submit_order_button_clicked() {
     Order* order = new Order(customer, items_in_cart, OrderType::InPerson);
     items_in_cart.clear();
     OrderQueue::new_order(order);
+=======
+    ui->back_button->hide();
+>>>>>>> Stashed changes
     switch_to_customer_dashboard();
 }
 
@@ -68,9 +72,14 @@ void MainWindow::on_exit_button_clicked() {
 
 void MainWindow::on_complete_order_button_clicked(){
     Order* finished_order = OrderQueue::pop_first_order();
+<<<<<<< Updated upstream
     finished_order->customer->loyalty_points_balance += finished_order->loyalty_points_earned_from_order();
     if (finished_order != nullptr) {
         generate_kitchen_dashboard();
+=======
+           if (finished_order != nullptr){
+            generate_kitchen_dashboard();
+>>>>>>> Stashed changes
     }
 }
 
@@ -113,11 +122,19 @@ void MainWindow::switch_to_dashboard(UserType type) {
             ui->stackedWidget->setCurrentIndex(5);
             break;
     }
+
+}
+
+void MainWindow::on_cancel_order_button_clicked() {
+    if (current_active_order != nullptr){
+        OrderQueue::cancel_order(current_active_order);
+        current_active_order = nullptr;
+        generate_customer_dashboard();
+    }
 }
 
 void MainWindow::switch_to_customer_dashboard() {
     ui->stackedWidget->setCurrentIndex(2);
-    ui->back_button->hide();
     generate_customer_dashboard();
 }
 

@@ -12,6 +12,7 @@ private:
     static QList<Order*> order_history;
 
 public:
+    static void cancel_order(Order* target_order);
     static void new_order(Order* order);
     static Order* pop_first_order();
     static QList<Order*> get_orders();

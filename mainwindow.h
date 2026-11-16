@@ -5,6 +5,7 @@
 
 #include "user.h"
 #include "menuitem.h"
+#include "order.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -24,11 +25,13 @@ private slots:
     void on_complete_order_button_clicked();
     void on_submit_order_button_clicked();
     void on_back_button_clicked();
+    void on_cancel_order_button_clicked();
 
 private:
     Ui::MainWindow *ui;
     User* current_user = nullptr;
     QList<MenuItem*> items_in_cart = QList<MenuItem*>();
+    Order* current_active_order = nullptr;
 
     void switch_to_dashboard(UserType type);
     void reset();
