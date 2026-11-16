@@ -16,7 +16,8 @@ QString orderstatus_to_str(OrderStatus type) {
         "Picked Up",
         "Cancelled"
     };
-    return status_names[static_cast<int>(type)];
+    int i = static_cast<int>(type);
+    return status_names[i];
 }
 
 QString Order::generate_info_text() {
@@ -56,7 +57,7 @@ float Order::unpaid_balance() {
     return total;
 }
 
-uint Order::points_earned_from_order() {
+uint Order::loyalty_points_earned_from_order() {
     if (loyalty_points_used > 0) {
         return 0; // as per business rules
     }

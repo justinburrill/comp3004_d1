@@ -22,6 +22,7 @@ private slots:
     void on_enter_button_clicked();
     void on_exit_button_clicked();
     void on_complete_order_button_clicked();
+    void on_submit_order_button_clicked();
     void on_back_button_clicked();
 
 private:
