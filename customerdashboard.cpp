@@ -47,7 +47,6 @@ void MainWindow::generate_customer_dashboard() {
             ui->order_history_content->addWidget(order_label);
         }
     }
-
 }
 
 void MainWindow::switch_to_menu() {
