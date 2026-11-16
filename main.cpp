@@ -4,6 +4,7 @@
 #include "menuitem.h"
 #include "fakedatabases.h"
 #include "order.h"
+#include "orderqueue.h"
 
 #include <QApplication>
 
@@ -16,6 +17,13 @@ uint Order::current_order_id = 0;
 QList<User*> UserDatabase::users = QList<User*>();
 QList<MenuItem*> MenuDatabase::menu_items = QList<MenuItem*>();
 QMap<QString, uint> IngredientDatabase::ingredients = QMap<QString, uint>();
+QList<Order*> OrderQueue::order_queue = QList<Order*>();
+QList<Order*> OrderQueue::order_history = QList<Order*>();
+
+void cleanup() {
+    cleanupFakeDatabases();
+    OrderQueue::cleanup();
+}
 
 int main(int argc, char *argv[])
 {
@@ -24,6 +32,6 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
     auto rc = a.exec();
-    cleanupFakeDatabases();
+    cleanup();
     return rc;
 }

@@ -26,5 +26,10 @@ private:
     User* current_user = nullptr;
     void switch_to_dashboard(UserType type);
     void reset();
+    void switch_to_customer_dashboard();
+    void switch_to_kitchen_dashboard();
+
+    void generate_customer_dashboard();
+    void generate_kitchen_dashboard();
 };
 #endif // MAINWINDOW_H

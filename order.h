@@ -25,6 +25,8 @@ public:
     {
         current_order_id++; // increment for next order
     }
+
+    QString generate_info_text();
 };
 
 

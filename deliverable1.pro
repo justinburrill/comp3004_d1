@@ -14,6 +14,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     menuitem.cpp \
+    orderqueue.cpp \
     user.cpp
 
 HEADERS += \

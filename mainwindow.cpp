@@ -44,7 +44,6 @@ void MainWindow::on_exit_button_clicked() {
     MainWindow::reset();
 }
 
-
 void MainWindow::switch_to_dashboard(UserType type) {
     ui->exit_button->show();
 
@@ -62,17 +61,16 @@ void MainWindow::switch_to_dashboard(UserType type) {
             .arg(current_user->name)
             .arg(roleStr);
 
-
     switch (type) {
         case UserType::Cashier:
             ui->cashier_info_label->setText(displayInfo);
             ui->stackedWidget->setCurrentIndex(1);
             break;
         case UserType::Customer:
-            ui->stackedWidget->setCurrentIndex(2);
+            switch_to_customer_dashboard();
             break;
         case UserType::KitchenStaff:
-            ui->stackedWidget->setCurrentIndex(3);
+            switch_to_kitchen_dashboard();
             break;
         case UserType::Manager:
             ui->manager_info_label->setText(displayInfo);
@@ -84,4 +82,14 @@ void MainWindow::switch_to_dashboard(UserType type) {
             break;
     }
 
+}
+
+void MainWindow::switch_to_customer_dashboard() {
+    ui->stackedWidget->setCurrentIndex(2);
+    generate_customer_dashboard();
+}
+
+void MainWindow::switch_to_kitchen_dashboard() {
+    ui->stackedWidget->setCurrentIndex(3);
+    generate_kitchen_dashboard();
 }

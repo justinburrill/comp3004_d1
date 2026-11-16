@@ -10,13 +10,15 @@ public:
     QString name;
     QString username;
 
-    User() = default;
-
     User(QString name, QString username)
         : name(name), username(username)
     {}
 
     virtual UserType get_type() const = 0;
+
+    bool operator==(User& r) {
+        return this->name == r.name && this->username == r.username;
+    }
 };
 
 class CustomerUser : public User {
@@ -94,7 +96,7 @@ class UserDatabaseInterface {
 public:
     static User* find_user(const QStringView name);
     static User* find_user(const uint loyalty_points_id);
-    static QList<User*>* get_users();
+    static QList<User*> get_users();
 };
 
 #endif // USER_H

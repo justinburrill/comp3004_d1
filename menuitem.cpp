@@ -25,4 +25,3 @@ void MenuDatabaseInterface::cleanup() {
     qDeleteAll(MenuDatabase::menu_items);
     MenuDatabase::menu_items.clear();
 }
-

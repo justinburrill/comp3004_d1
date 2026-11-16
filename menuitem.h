@@ -22,11 +22,15 @@ public:
 
 class MenuDatabaseInterface {
 public:
+<<<<<<< Updated upstream
     static void add_menu_item(QString name, MenuCategory category, float price, QMap<QString, uint> ingredients);
 
     static QList<MenuItem*> get_menu_items();
     static MenuItem* find_menu_item(const QStringView name);
     static void cleanup();
+=======
+    static QList<MenuItem*> getMenuItems();
+>>>>>>> Stashed changes
 };
 
 #endif // MENUITEM_H
