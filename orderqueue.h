@@ -16,6 +16,7 @@ public:
     static Order* pop_first_order();
     static QList<Order*> get_orders();
     static QList<Order*> get_order_history();
+    static Order* get_current_order_for_customer(CustomerUser* customer);
     static QList<Order*> get_order_history_for_customer(CustomerUser* customer);
     static void cleanup();
 };
