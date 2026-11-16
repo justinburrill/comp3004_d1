@@ -59,7 +59,6 @@ QString usertype_to_str(UserType type) {
 void MainWindow::switch_to_dashboard(UserType type) {
     ui->exit_button->show();
 
-
     QString displayInfo = QString("Name: %1\nRole: %2")
             .arg(current_user->name)
             .arg(usertype_to_str(current_user->get_type()));

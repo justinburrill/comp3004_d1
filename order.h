@@ -7,6 +7,8 @@
 
 enum class OrderType {Online, InPerson};
 
+enum class OrderStatus {InProgress, Completed, PickedUp, Cancelled};
+
 
 class Order {
 private:
@@ -17,6 +19,7 @@ public:
     CustomerUser* customer;
     QList<MenuItem*> menu_items;
     OrderType type;
+    OrderStatus status;
     float loyalty_points_used;
     float credit_used;
 
