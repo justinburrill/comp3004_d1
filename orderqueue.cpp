@@ -35,4 +35,6 @@ QList<Order*> OrderQueue::get_order_history_for_customer(CustomerUser* customer)
 void OrderQueue::cleanup() {
     qDeleteAll(order_queue);
     qDeleteAll(order_history);
+    order_queue.clear();
+    order_history.clear();
 }

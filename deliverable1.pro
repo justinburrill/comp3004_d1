@@ -16,6 +16,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     menuitem.cpp \
+    order.cpp \
     orderqueue.cpp \
     user.cpp
 

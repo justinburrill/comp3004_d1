@@ -26,7 +26,6 @@ public:
 
     static QList<MenuItem*> get_menu_items();
     static MenuItem* find_menu_item(const QStringView name);
-    static void cleanup();
 };
 
 #endif // MENUITEM_H

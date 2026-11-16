@@ -13,15 +13,10 @@ QList<MenuItem*> MenuDatabaseInterface::get_menu_items(){
 }
 
 MenuItem* MenuDatabaseInterface::find_menu_item(const QStringView name) {
-    for (MenuItem* item: MenuDatabase:: menu_items) {
+    for (MenuItem* item : MenuDatabase::menu_items) {
         if (item->name == name) {
             return item;
         }
     }
     return nullptr;
-}
-
-void MenuDatabaseInterface::cleanup() {
-    qDeleteAll(MenuDatabase::menu_items);
-    MenuDatabase::menu_items.clear();
 }

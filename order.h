@@ -27,6 +27,10 @@ public:
     }
 
     QString generate_info_text();
+    float total_cost();
+    QString total_cost_str();
+    float subtotal_cost();
+    QString subtotal_cost_str();
 };
 
 

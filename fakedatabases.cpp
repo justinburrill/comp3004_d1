@@ -118,6 +118,7 @@ void UserDatabase::add_user(User *user) {
 
 void UserDatabase::cleanup() {
     qDeleteAll(users);
+    users.clear();
 }
 
 void IngredientDatabase::cleanup() {
@@ -126,4 +127,5 @@ void IngredientDatabase::cleanup() {
 
 void MenuDatabase::cleanup() {
     qDeleteAll(menu_items);
+    menu_items.clear();
 }
