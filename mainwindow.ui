@@ -105,35 +105,29 @@
         <layout class="QHBoxLayout" name="upper_area">
          <item>
           <widget class="QFrame" name="current_order_frame">
-           <property name="frameShape">
-            <enum>QFrame::StyledPanel</enum>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Raised</enum>
-           </property>
-           <widget class="QLabel" name="current_order_label">
+           <widget class="QWidget" name="verticalLayoutWidget">
             <property name="geometry">
              <rect>
-              <x>20</x>
-              <y>10</y>
-              <width>111</width>
+              <x>9</x>
+              <y>19</y>
+              <width>371</width>
+              <height>241</height>
+             </rect>
+            </property>
+            <layout class="QVBoxLayout" name="current_order_contents"/>
+           </widget>
+           <widget class="QLabel" name="label">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>0</y>
+              <width>121</width>
               <height>17</height>
              </rect>
             </property>
             <property name="text">
              <string>Current Order:</string>
             </property>
-           </widget>
-           <widget class="QWidget" name="verticalLayoutWidget_3">
-            <property name="geometry">
-             <rect>
-              <x>9</x>
-              <y>29</y>
-              <width>371</width>
-              <height>231</height>
-             </rect>
-            </property>
-            <layout class="QVBoxLayout" name="current_order_contents"/>
            </widget>
           </widget>
          </item>

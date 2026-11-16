@@ -3,6 +3,7 @@
 #include "ui_mainwindow.h"
 #include "order.h"
 #include "orderqueue.h"
+#include <qlabel.h>
 #include "widget_helpers.h"
 
 
@@ -35,6 +36,7 @@ void MainWindow::generate_customer_dashboard() {
     }
 
     QList<Order*> orders = OrderQueue::get_order_history_for_customer(customer);
+
     if (orders.empty()) {
         QLabel *empty_label = new QLabel("No orders.", this);
         ui->order_history_content->addWidget(empty_label);
