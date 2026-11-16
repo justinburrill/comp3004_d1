@@ -76,7 +76,78 @@
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="customer_dashboard"/>
+    <widget class="QWidget" name="customer_dashboard">
+     <widget class="QWidget" name="gridLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>781</width>
+        <height>541</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="2" column="0">
+        <layout class="QVBoxLayout" name="order_history_content">
+         <item>
+          <widget class="QLabel" name="order_history_label">
+           <property name="text">
+            <string>Order History:</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="0">
+        <layout class="QHBoxLayout" name="upper_area">
+         <item>
+          <widget class="QFrame" name="current_order_frame">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <widget class="QLabel" name="current_order_label">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>10</y>
+              <width>111</width>
+              <height>17</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Current Order:</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="current_order_content">
+            <property name="geometry">
+             <rect>
+              <x>21</x>
+              <y>36</y>
+              <width>321</width>
+              <height>101</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>TextLabel</string>
+            </property>
+           </widget>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="customer_info">
+           <property name="text">
+            <string>customer info</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
     <widget class="QWidget" name="kitchen_staff_dashboard"/>
     <widget class="QWidget" name="manager_dashboard">
      <widget class="QLabel" name="manager_info_label">
