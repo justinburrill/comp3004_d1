@@ -1,7 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "user.h"
-
+#include "order.h"
+#include "orderqueue.h"
 #include <QString>
 #include <QMessageBox>
 
@@ -54,6 +55,13 @@ QString usertype_to_str(UserType type) {
     };
 
     return roleNames[static_cast<int>(type)];
+}
+
+void MainWindow::on_complete_order_button_clicked(){
+    Order* finished_order = OrderQueue::pop_first_order();
+           if (finished_order != nullptr){
+            generate_kitchen_dashboard();
+    }
 }
 
 void MainWindow::switch_to_dashboard(UserType type) {

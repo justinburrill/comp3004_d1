@@ -5,7 +5,6 @@
 #include "QList"
 #include "QMap"
 
-
 void setupFakeUserDatabase() {
     UserDatabase::add_user(new CustomerUser("Jane Doe", "JDeey", "janedoe@fakemail.com", "123 Sesame St"));
     UserDatabase::add_user(new CustomerUser("George Johnson", "Georson", "georgio@fakemail.com", "223 Rock Ave"));
@@ -110,6 +109,7 @@ void cleanupFakeDatabases() {
 void setupFakeDatabases() {
     setupFakeUserDatabase();
     setupFakeIngredientDatabase();
+    setupFakeMenuItemDatabase();
 }
 
 void UserDatabase::add_user(User *user) {
