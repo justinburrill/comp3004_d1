@@ -27,6 +27,7 @@ void setupFakeIngredientDatabase() {
     IngredientDatabaseInterface::add_count("Lettuce", 100);
     IngredientDatabaseInterface::add_count("Tomato", 100);
     IngredientDatabaseInterface::add_count("Bread", 45);
+    IngredientDatabaseInterface::add_count("Bagel Bread", 45);
     IngredientDatabaseInterface::add_count("Chicken", 60);
     IngredientDatabaseInterface::add_count("Steak", 35);
     IngredientDatabaseInterface::add_count("Pork", 29);
@@ -36,13 +37,76 @@ void setupFakeIngredientDatabase() {
     IngredientDatabaseInterface::add_count("Tomato Sauce", 40);
     IngredientDatabaseInterface::add_count("Cream Cheese", 92);
     IngredientDatabaseInterface::add_count("Cheese", 57);
-    IngredientDatabaseInterface::add_count("Coffee", 180);
+    IngredientDatabaseInterface::add_count("Coffee Beans", 280);
+    IngredientDatabaseInterface::add_count("Chocolate", 45);
+    IngredientDatabaseInterface::add_count("Milk", 165);
     IngredientDatabaseInterface::add_count("Sugar", 180);
+    IngredientDatabaseInterface::add_count("Ice", 368);
     IngredientDatabaseInterface::add_count("Salt", 180);
 }
 
 void setupFakeMenuItemDatabase() {
-    // TODO
+    MenuDatabaseInterface::add_menu_item("BLT Sandwich", MenuCategory::Sandwich, 8.99f, {
+    {"Bread", 1},
+    {"Bacon", 3},
+    {"Lettuce", 1},
+    {"Tomato", 1},
+    {"Mayo", 1}
+   });
+    MenuDatabaseInterface::add_menu_item("Cream Cheese Bagel", MenuCategory::Sandwich, 6.49f, {
+    {"Bagel Bread", 1},
+    {"Cream Cheese", 1}
+   });
+    MenuDatabaseInterface::add_menu_item("Meat Lovers Sandwich", MenuCategory::Sandwich, 9.99f, {
+    {"Bread", 1},
+    {"Bacon", 2},
+    {"Chicken", 2},
+    {"Pork", 2},
+    {"Steak", 1},
+    {"Tomato Sauce", 1},
+    {"Cheese", 1}
+   });
+    MenuDatabaseInterface::add_menu_item("Coffee", MenuCategory::HotBeverage, 3.99f, {
+    {"Coffee Beans", 1},
+    {"Sugar", 2}
+   });
+    MenuDatabaseInterface::add_menu_item("Tea", MenuCategory::HotBeverage, 3.99f, {
+    {"Tea Leaves", 2},
+    {"Sugar", 2}
+   });
+    MenuDatabaseInterface::add_menu_item("Hot Chocolate", MenuCategory::HotBeverage, 4.49f, {
+    {"Sugar", 1},
+    {"Chocolate", 2},
+    {"Milk", 1}
+   });
+    MenuDatabaseInterface::add_menu_item("Large Coffee", MenuCategory::HotBeverage, 6.49f, {
+    {"Coffee Beans", 2},
+    {"Sugar", 3}
+   });
+    MenuDatabaseInterface::add_menu_item("Iced Tea", MenuCategory::ColdBeverage, 3.99f, {
+    {"Sugar", 3},
+    {"Lemon", 1},
+    {"Tea Leaves", 1},
+    {"Ice", 3}
+   });
+    MenuDatabaseInterface::add_menu_item("Iced Coffee", MenuCategory::ColdBeverage, 4.49f, {
+    {"Sugar", 2},
+    {"Coffee Beans", 2},
+    {"Ice", 5}
+   });
+    MenuDatabaseInterface::add_menu_item("Large Iced Cofee", MenuCategory::ColdBeverage, 7.49f, {
+    {"Sugar", 3},
+    {"Coffe Beans", 4},
+    {"Ice", 8},
+   });
+
+
+
+
+
+
+
+
 }
 
 void cleanupFakeDatabases() {
