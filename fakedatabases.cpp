@@ -97,12 +97,7 @@ void setupFakeMenuItemDatabase() {
         {"Sugar", 3},
         {"Coffe Beans", 4},
         {"Ice", 8}
-    });
-
-    for (MenuItem* i : MenuDatabaseInterface::get_menu_items()) {
-        qDebug("Item: %p", i);
-    }
-}
+    });}
 
 void cleanupFakeDatabases() {
     UserDatabase::cleanup(); // delete users allocated with "new"

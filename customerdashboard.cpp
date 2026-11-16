@@ -50,7 +50,6 @@ void MainWindow::generate_customer_dashboard() {
 
 }
 
-
 void MainWindow::switch_to_menu() {
     ui->stackedWidget->setCurrentIndex(6);
     ui->back_button->show();
@@ -59,20 +58,17 @@ void MainWindow::switch_to_menu() {
 
 void MainWindow::generate_cart() {
     delete_children(ui->cart_layout);
-    qDebug("generating cart");
     if (items_in_cart.size() == 0) {
         ui->cart_layout->addWidget(new QLabel("No items selected."));
         return;
     }
     for (MenuItem *item_in_cart : items_in_cart) {
-        qDebug("item in cart: %p", item_in_cart);
         QString txt = item_in_cart->generate_menu_text();
         QLabel* label = new QLabel(txt);
         ui->cart_layout->addWidget(label);
         QPushButton* button = new QPushButton();
         button->setText("Remove");
         connect(button, &QPushButton::clicked, this, [this, item_in_cart] {
-            qDebug("removing...");
             items_in_cart.removeOne(item_in_cart);
             generate_cart();
         });
@@ -81,14 +77,11 @@ void MainWindow::generate_cart() {
 }
 
 void MainWindow::generate_menu() {
-    qDebug("generating menu");
     // remove and regenerate
     delete_children(ui->available_menu_item_layout);
 
-    qDebug("done deleting");
     ui->available_menu_item_layout->addWidget(new QLabel("Available menu items:"));
     for (MenuItem *item_in_menu : MenuDatabaseInterface::get_menu_items()) {
-        qDebug("item in menu: %p", item_in_menu);
         ui->available_menu_item_layout->addWidget(new QLabel(item_in_menu->generate_menu_text()));
         if (item_in_menu->is_sold_out()) {
             ui->available_menu_item_layout->addWidget(new QLabel("Currently sold out."));
@@ -97,8 +90,7 @@ void MainWindow::generate_menu() {
             QPushButton* button = new QPushButton();
             button->setText("Add to order");
             // add lambda function as the on-clicked event
-            connect(button, &QPushButton::clicked, this, [this, &item_in_menu] {
-                qDebug("adding to cart...");
+            connect(button, &QPushButton::clicked, this, [this, item_in_menu] {
                 items_in_cart.push_back(item_in_menu);
                 generate_cart();
             });
