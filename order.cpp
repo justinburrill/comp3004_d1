@@ -28,9 +28,9 @@ QString Order::generate_info_text() {
             .arg(orderstatus_to_str(status))
             .arg(ordertype_to_str(type));
     for (MenuItem* item : menu_items) {
-        out += QString("\n%1 (%2)").arg(item->name, 15);
+        out += QString("\n  %1 (%2)").arg(item->name).arg(item->price);
     }
-    out += QString("Subtotal: %1\nTotal: %2\nLoyalty points redeemed: %3\nAccount credit used: %4")
+    out += QString("\nSubtotal: %1\nTotal: %2\nLoyalty points redeemed: %3\nAccount credit used: %4")
             .arg(format_float(subtotal_cost()))
             .arg(format_float(total_cost()))
             .arg(loyalty_points_used)
@@ -62,6 +62,7 @@ uint Order::loyalty_points_earned_from_order() {
         return 0; // as per business rules
     }
     uint points_earned = total_cost() / 3;
+    qDebug("Earned %d points", points_earned);
     return points_earned;
 }
 

@@ -43,6 +43,10 @@ void MainWindow::on_back_button_clicked() {
 }
 
 void MainWindow::on_submit_order_button_clicked() {
+    if (items_in_cart.size() == 0) {
+        QMessageBox::information(this, "Order Error", "Empty cart, try again.");
+        return;
+    }
     CustomerUser* customer = static_cast<CustomerUser*>(current_user);
     Order* order = new Order(customer, items_in_cart, OrderType::InPerson);
     customer->loyalty_points_balance += order->loyalty_points_earned_from_order();
