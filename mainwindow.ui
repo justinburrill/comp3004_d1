@@ -27,8 +27,8 @@
      <widget class="QLabel" name="username_entry_label">
       <property name="geometry">
        <rect>
-        <x>280</x>
-        <y>180</y>
+        <x>290</x>
+        <y>200</y>
         <width>131</width>
         <height>17</height>
        </rect>
@@ -40,8 +40,8 @@
      <widget class="QPushButton" name="enter_button">
       <property name="geometry">
        <rect>
-        <x>280</x>
-        <y>240</y>
+        <x>290</x>
+        <y>260</y>
         <width>81</width>
         <height>21</height>
        </rect>
@@ -53,8 +53,8 @@
      <widget class="QLineEdit" name="username_entry">
       <property name="geometry">
        <rect>
-        <x>280</x>
-        <y>200</y>
+        <x>290</x>
+        <y>220</y>
         <width>181</width>
         <height>31</height>
        </rect>
