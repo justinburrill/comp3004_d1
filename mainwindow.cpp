@@ -1,8 +1,11 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
-#include "user.h"
+#include "menuitem.h"
 #include "order.h"
 #include "orderqueue.h"
+#include "ui_mainwindow.h"
+#include "user.h"
+#include "widget_helpers.h"
+
 #include <QString>
 #include <QMessageBox>
 
@@ -13,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     ui->stackedWidget->setCurrentIndex(0); // start on login page
     ui->exit_button->hide(); // don't need the exit button on the login page
+    ui->back_button->hide(); // only for the menu
 }
 
 MainWindow::~MainWindow()
@@ -34,15 +38,28 @@ void MainWindow::on_enter_button_clicked() {
     }
 }
 
+void MainWindow::on_back_button_clicked() {
+    ui->back_button->hide();
+    switch_to_customer_dashboard();
+}
+
 void MainWindow::reset() {
     ui->stackedWidget->setCurrentIndex(0);
     ui->username_entry->clear();
     ui->exit_button->hide();
+    ui->back_button->hide();
     current_user = nullptr;
 }
 
 void MainWindow::on_exit_button_clicked() {
     MainWindow::reset();
+}
+
+void MainWindow::on_complete_order_button_clicked(){
+    Order* finished_order = OrderQueue::pop_first_order();
+           if (finished_order != nullptr){
+            generate_kitchen_dashboard();
+    }
 }
 
 QString usertype_to_str(UserType type) {
@@ -55,13 +72,6 @@ QString usertype_to_str(UserType type) {
     };
 
     return roleNames[static_cast<int>(type)];
-}
-
-void MainWindow::on_complete_order_button_clicked(){
-    Order* finished_order = OrderQueue::pop_first_order();
-           if (finished_order != nullptr){
-            generate_kitchen_dashboard();
-    }
 }
 
 void MainWindow::switch_to_dashboard(UserType type) {

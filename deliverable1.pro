@@ -18,7 +18,8 @@ SOURCES += \
     menuitem.cpp \
     order.cpp \
     orderqueue.cpp \
-    user.cpp
+    user.cpp \
+    widget_helpers.cpp
 
 HEADERS += \
     fakedatabases.h \
@@ -27,7 +28,8 @@ HEADERS += \
     menuitem.h \
     order.h \
     orderqueue.h \
-    user.h
+    user.h \
+    widget_helpers.h
 
 FORMS += \
     mainwindow.ui

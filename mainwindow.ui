@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>6</number>
     </property>
     <widget class="QWidget" name="login_page">
      <widget class="QLabel" name="username_entry_label">
@@ -124,18 +124,16 @@
              <string>Current Order:</string>
             </property>
            </widget>
-           <widget class="QLabel" name="current_order_content">
+           <widget class="QWidget" name="verticalLayoutWidget_3">
             <property name="geometry">
              <rect>
-              <x>21</x>
-              <y>36</y>
-              <width>321</width>
-              <height>101</height>
+              <x>9</x>
+              <y>29</y>
+              <width>371</width>
+              <height>231</height>
              </rect>
             </property>
-            <property name="text">
-             <string>TextLabel</string>
-            </property>
+            <layout class="QVBoxLayout" name="current_order_contents"/>
            </widget>
           </widget>
          </item>
@@ -230,6 +228,26 @@
       </property>
      </widget>
     </widget>
+    <widget class="QWidget" name="menu">
+     <widget class="QWidget" name="horizontalLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>9</x>
+        <y>10</y>
+        <width>781</width>
+        <height>541</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="menu_horizontal_layout">
+       <item>
+        <layout class="QVBoxLayout" name="cart_layout"/>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="available_menu_item_layout"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
    </widget>
    <widget class="QPushButton" name="exit_button">
     <property name="geometry">
@@ -242,6 +260,19 @@
     </property>
     <property name="text">
      <string>Exit</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="back_button">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>560</y>
+      <width>83</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Back</string>
     </property>
    </widget>
   </widget>

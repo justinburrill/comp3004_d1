@@ -5,6 +5,8 @@
 
 enum class UserType {Cashier, KitchenStaff, Manager, SysAdmin, Customer};
 
+QString usertype_to_str(UserType type);
+
 class User {
 public:
     QString name;

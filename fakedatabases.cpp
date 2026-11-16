@@ -98,6 +98,10 @@ void setupFakeMenuItemDatabase() {
         {"Coffe Beans", 4},
         {"Ice", 8}
     });
+
+    for (MenuItem* i : MenuDatabaseInterface::get_menu_items()) {
+        qDebug("Item: %p", i);
+    }
 }
 
 void cleanupFakeDatabases() {
