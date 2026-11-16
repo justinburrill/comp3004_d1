@@ -3,7 +3,11 @@
 Justin Burrill 101310799 Vitalii Chemerys 101299756 Adrian Fernandes 101195636
 
 Installation:
-
+Install zip file and extract
+Launch QT Creator
+Go to File > Open File or Project and select the .pro file
+Select build kit 
+Run
 
 Test Users:
 
